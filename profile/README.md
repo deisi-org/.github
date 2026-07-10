@@ -2,7 +2,7 @@
 
 # DEISI — Aplicações Académicas Online
 
-### Plataforma institucional para publicação de aplicações desenvolvidas no âmbito académico
+### Plataforma institucional para deploy de aplicações desenvolvidas no âmbito académico
 
 **Universidade Lusófona · Departamento de Engenharia Informática e Sistemas de Informação**
 
@@ -14,7 +14,7 @@
 
 A organização **deisi-org** reúne projetos académicos, aplicações e recursos associados ao Departamento de Engenharia Informática e Sistemas de Informação da Universidade Lusófona.
 
-Esta organização suporta a disponibilização de aplicações desenvolvidas por alunos e equipas académicas, permitindo que os projetos possam ser publicados online com um endereço institucional.
+Esta organização suporta o deploy de aplicações desenvolvidas por alunos e equipas académicas, permitindo colocar os projetos online com um endereço institucional.
 
 As aplicações disponibilizadas através desta plataforma podem ficar acessíveis em endereços do tipo:
 
@@ -26,13 +26,13 @@ https://nome-da-app.apps.deisi.ulusofona.pt
 
 ## Objetivo da plataforma
 
-A plataforma foi criada para simplificar a publicação de aplicações académicas, disponibilizando uma forma centralizada, consistente e segura de colocar projetos online.
+A plataforma foi criada para simplificar o deploy de aplicações académicas, disponibilizando uma forma centralizada, consistente e segura de colocar projetos online.
 
 Entre os principais objetivos encontram-se:
 
-- facilitar a disponibilização pública de aplicações desenvolvidas no DEISI;
+- facilitar o deploy de aplicações desenvolvidas no DEISI;
 - permitir a utilização de um domínio institucional;
-- uniformizar o processo de publicação dos diferentes projetos;
+- uniformizar o processo de deploy dos diferentes projetos;
 - reduzir a necessidade de acesso direto à infraestrutura;
 - disponibilizar suporte para aplicações com diferentes tecnologias;
 - garantir uma separação clara entre o código das aplicações e a infraestrutura central.
@@ -77,7 +77,7 @@ A plataforma disponibiliza, consoante as necessidades de cada aplicação:
 
 | Funcionalidade | Descrição |
 |---|---|
-| **Publicação automática** | Atualização da aplicação a partir do repositório GitHub. |
+| **Deploy automático** | Atualização da aplicação a partir do repositório GitHub. |
 | **Domínio institucional** | Endereço público no domínio `apps.deisi.ulusofona.pt`. |
 | **HTTPS** | Acesso seguro através de certificado válido. |
 | **Variáveis de ambiente** | Configuração de chaves, tokens e outros valores sensíveis. |
@@ -139,10 +139,10 @@ Cada equipa é responsável por:
 - garantir que a aplicação pode ser executada em Docker;
 - manter a documentação do próprio projeto;
 - proteger credenciais e dados sensíveis;
-- acompanhar o estado da publicação da sua aplicação;
+- acompanhar o estado do deploy da sua aplicação;
 - comunicar erros com informação suficiente para diagnóstico.
 
-A plataforma central disponibiliza o mecanismo de publicação, mas não substitui a validação técnica da aplicação.
+A plataforma central disponibiliza o mecanismo de deploy, mas não substitui a validação técnica da aplicação.
 
 ---
 
@@ -166,6 +166,6 @@ Não devem ser enviados passwords, tokens, chaves privadas ou outros valores sen
 
 **DEISI — Universidade Lusófona**
 
-Plataforma de publicação de aplicações académicas
+Plataforma de deploy de aplicações académicas
 
 </div>
