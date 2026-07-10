@@ -62,7 +62,6 @@ A plataforma foi concebida para ser genérica e pode suportar diferentes tipos d
 - APIs;
 - backends;
 - frontends;
-- monólitos;
 - sites estáticos;
 - aplicações com base de dados;
 - aplicações com armazenamento persistente.
