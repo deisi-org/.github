@@ -2,7 +2,7 @@
 
 # DEISI — Plataforma de Deploy
 
-### Aplicações académicas online no domínio institucional da Universidade Lusófona
+### Aplicações online no domínio institucional da Universidade Lusófona
 
 **Docker · GitHub Actions · Kubernetes · PostgreSQL · HTTPS**
 
