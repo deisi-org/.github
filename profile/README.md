@@ -1,163 +1,226 @@
 <div align="center">
 
-# DEISI — Aplicações Académicas Online
+# DEISI — Plataforma de Deploy
 
-### Plataforma institucional para deploy de aplicações desenvolvidas no âmbito académico
+### Aplicações académicas online no domínio institucional da Universidade Lusófona
 
-**Universidade Lusófona · Departamento de Engenharia Informática e Sistemas de Informação**
-
-</div>
-
----
-
-## Sobre esta organização
-
-A organização **deisi-org** reúne projetos académicos, aplicações e recursos associados ao Departamento de Engenharia Informática e Sistemas de Informação da Universidade Lusófona.
-
-Esta organização suporta o deploy de aplicações desenvolvidas por alunos e equipas académicas, permitindo colocar os projetos online com um endereço institucional.
-
-As aplicações disponibilizadas através desta plataforma podem ficar acessíveis em endereços do tipo:
+**Docker · GitHub Actions · Kubernetes · PostgreSQL · HTTPS**
 
 ```text
 https://nome-da-app.apps.deisi.ulusofona.pt
 ```
 
+</div>
+
 ---
 
-## Objetivo da plataforma
+## Sobre a plataforma
 
-A plataforma foi criada para simplificar o deploy de aplicações académicas, disponibilizando uma forma centralizada, consistente e segura de colocar projetos online.
+A **Plataforma de Deploy DEISI** permite colocar online aplicações desenvolvidas por alunos, docentes e equipas académicas através de um processo centralizado e automatizado.
 
-Entre os principais objetivos encontram-se:
+Cada aplicação é mantida num repositório próprio da organização e pode ser disponibilizada num endereço institucional, sem que a respetiva equipa necessite de acesso direto à máquina virtual, ao cluster Kubernetes, às bases de dados centrais ou aos componentes internos da infraestrutura.
 
-- facilitar o deploy de aplicações desenvolvidas no DEISI;
-- permitir a utilização de um domínio institucional;
-- uniformizar o processo de deploy dos diferentes projetos;
-- reduzir a necessidade de acesso direto à infraestrutura;
-- disponibilizar suporte para aplicações com diferentes tecnologias;
-- garantir uma separação clara entre o código das aplicações e a infraestrutura central.
+A plataforma foi criada para substituir processos manuais e configurações isoladas por um modelo comum, reutilizável e alinhado com práticas modernas de DevOps.
 
 ---
 
 ## A quem se destina
 
-Esta plataforma destina-se principalmente a:
+Esta plataforma destina-se a:
 
-- alunos com projetos académicos que necessitem de ficar disponíveis online;
+- alunos que pretendam colocar projetos académicos online;
 - equipas de Trabalhos Finais de Curso;
-- docentes responsáveis pelo acompanhamento de projetos;
-- aplicações institucionais ou demonstradores desenvolvidos no contexto do DEISI.
+- docentes responsáveis por aplicações ou demonstradores;
+- projetos desenvolvidos no contexto do DEISI;
+- aplicações institucionais que necessitem de um ambiente de execução comum.
 
-Cada equipa trabalha apenas no repositório da respetiva aplicação.
+> [!IMPORTANT]
+> Cada utilizador trabalha apenas no repositório da sua aplicação.  
+> Não é necessário conhecer ou administrar a infraestrutura interna da plataforma.
 
-O acesso direto ao cluster, aos servidores, às bases de dados centrais e aos componentes internos da plataforma não é necessário para a utilização normal do serviço.
+---
+
+## O que a plataforma oferece
+
+| Funcionalidade | Descrição |
+|---|---|
+| **Deploy automatizado** | A aplicação é construída e atualizada através do GitHub Actions. |
+| **Domínio institucional** | Cada aplicação pode ser disponibilizada em `nome-da-app.apps.deisi.ulusofona.pt`. |
+| **HTTPS** | O acesso público é disponibilizado através de ligação segura. |
+| **Suporte a várias tecnologias** | Podem ser utilizadas diferentes linguagens e frameworks, desde que a aplicação execute em Docker. |
+| **Variáveis de ambiente seguras** | Chaves, tokens e configurações privadas são tratados através de secrets. |
+| **PostgreSQL opcional** | Cada aplicação pode receber uma base de dados, utilizador e credenciais próprias. |
+| **Migrations automáticas** | A atualização da estrutura da base de dados pode fazer parte do processo de deploy. |
+| **Persistência de ficheiros** | Pode ser associado armazenamento persistente para uploads, imagens ou documentos. |
+| **Rolling updates** | As novas versões são aplicadas de forma controlada. |
+| **Recuperação automática** | A infraestrutura tenta repor aplicações quando ocorre uma falha no respetivo processo de execução. |
+| **Backups da base de dados** | O PostgreSQL central dispõe de backups automáticos guardados fora do cluster. |
 
 ---
 
 ## Tecnologias suportadas
 
-A plataforma foi concebida para ser genérica e pode suportar diferentes tipos de aplicações, incluindo:
+A plataforma é independente da linguagem ou framework utilizada.
 
-- aplicações web;
-- APIs;
-- backends;
-- frontends;
-- sites estáticos;
-- aplicações com base de dados;
-- aplicações com armazenamento persistente.
+Pode suportar, entre outros:
 
-Podem ser utilizadas tecnologias como Python, Django, Flask, FastAPI, Node.js, React, Java, Spring Boot, PHP, Laravel, entre outras, desde que a aplicação possa ser executada num container Docker.
+- Django, Flask e FastAPI;
+- Node.js, Express e NestJS;
+- React, Vite e aplicações frontend;
+- Java e Spring Boot;
+- PHP e Laravel;
+- APIs, backends e sites estáticos.
 
----
-
-## Funcionalidades disponíveis
-
-A plataforma disponibiliza, consoante as necessidades de cada aplicação:
-
-| Funcionalidade | Descrição |
-|---|---|
-| **Deploy automático** | Atualização da aplicação a partir do repositório GitHub. |
-| **Domínio institucional** | Endereço público no domínio `apps.deisi.ulusofona.pt`. |
-| **HTTPS** | Acesso seguro através de certificado válido. |
-| **Variáveis de ambiente** | Configuração de chaves, tokens e outros valores sensíveis. |
-| **PostgreSQL** | Base de dados dedicada a cada aplicação, quando necessária. |
-| **Migrations** | Execução de comandos de atualização da estrutura da base de dados. |
-| **Persistência de ficheiros** | Armazenamento persistente para uploads, imagens e documentos. |
-| **Isolamento entre aplicações** | Cada aplicação possui configuração e credenciais próprias. |
+O requisito principal é que a aplicação possa ser executada num container Docker.
 
 ---
 
-## Documentação
+## Experiência do utilizador
 
-A documentação de utilização da plataforma encontra-se disponível no guia seguinte:
+Do ponto de vista de um aluno ou docente, a utilização da plataforma está limitada ao repositório da aplicação.
 
-### [Guia genérico para colocar uma aplicação online](./docs/guia-deploy-aplicacoes.pdf)
+A infraestrutura central trata das operações comuns necessárias para colocar a aplicação online, incluindo:
 
-O guia contém as instruções necessárias para preparar e publicar uma aplicação, incluindo:
+```text
+Código da aplicação
+        ↓
+Construção da imagem
+        ↓
+Deploy no cluster
+        ↓
+Configuração do acesso HTTPS
+        ↓
+Aplicação disponível no domínio institucional
+```
 
-- organização do repositório;
+Quando solicitado pela aplicação, a plataforma pode também preparar:
+
+- variáveis de ambiente;
+- base de dados PostgreSQL;
+- migrations;
+- armazenamento persistente;
+- credenciais próprias para ligação à base de dados.
+
+Toda a complexidade associada ao cluster, à rede interna e aos componentes administrativos permanece separada da utilização normal da plataforma.
+
+---
+
+## Documentação de deploy
+
+As instruções completas para preparar e colocar uma aplicação online encontram-se no guia seguinte:
+
+<div align="center">
+
+### [Abrir o Guia Genérico de Deploy](./docs/guia-deploy-aplicacoes.pdf)
+
+</div>
+
+O guia inclui informação sobre:
+
+- requisitos da aplicação;
+- preparação do repositório;
 - criação do Dockerfile;
 - configuração do workflow;
+- escolha da porta interna;
 - variáveis de ambiente e secrets;
-- bases de dados PostgreSQL;
+- base de dados PostgreSQL;
 - migrations;
 - persistência de ficheiros;
-- acompanhamento do processo de publicação;
+- acompanhamento do deploy;
 - resolução de problemas comuns.
 
 ---
 
-## Organização e acesso
+## Acesso e organização dos repositórios
 
-Os repositórios das aplicações podem ser públicos ou privados, de acordo com as regras definidas para cada projeto.
+Cada aplicação possui o seu próprio repositório e o acesso é atribuído apenas aos membros autorizados.
 
-O acesso é atribuído apenas às pessoas ou equipas que necessitam de trabalhar em cada repositório.
+Os utilizadores da plataforma:
 
-Os componentes centrais da infraestrutura são geridos separadamente e não fazem parte do acesso normal dos utilizadores da plataforma.
+- têm acesso ao repositório da respetiva aplicação;
+- podem acompanhar o deploy através do GitHub Actions;
+- não necessitam de acesso à VM;
+- não necessitam de acesso ao Kubernetes;
+- não necessitam de acesso direto ao PostgreSQL;
+- não necessitam de acesso aos repositórios internos da infraestrutura.
+
+Esta separação reduz a exposição de componentes técnicos e permite que cada equipa se concentre no desenvolvimento da sua aplicação.
+
+---
+
+## Responsabilidades
+
+### Equipa da aplicação
+
+A equipa responsável por cada projeto deve:
+
+- manter o código da aplicação funcional;
+- garantir que a aplicação pode ser executada através de Docker;
+- proteger passwords, tokens e chaves privadas;
+- configurar corretamente as variáveis necessárias;
+- manter a documentação específica do projeto;
+- acompanhar o resultado do deploy no GitHub Actions.
+
+### Plataforma DEISI
+
+A plataforma disponibiliza:
+
+- construção e disponibilização da aplicação;
+- integração com o domínio institucional;
+- gestão dos recursos necessários no ambiente de execução;
+- suporte opcional a PostgreSQL, migrations e persistência;
+- isolamento lógico entre aplicações;
+- backups automáticos da base de dados central.
+
+A plataforma não corrige automaticamente erros existentes no código, no Dockerfile, nas dependências ou nas migrations de uma aplicação.
 
 ---
 
 ## Segurança
 
-A utilização da plataforma deve respeitar as seguintes regras:
+Para garantir uma utilização segura:
 
-- não guardar passwords, tokens ou chaves privadas no código;
-- não publicar ficheiros `.env`;
-- utilizar os mecanismos de secrets disponibilizados pelo GitHub;
-- não partilhar credenciais de base de dados;
-- não incluir informação sensível em issues, commits ou pedidos de suporte;
-- limitar o acesso aos repositórios apenas aos membros necessários.
+- passwords, tokens e chaves privadas não devem ser guardados no código;
+- ficheiros `.env` não devem ser enviados para o repositório;
+- devem ser utilizados GitHub Secrets para valores sensíveis;
+- credenciais de base de dados não devem ser partilhadas;
+- informação sensível não deve ser incluída em commits, issues ou pedidos de suporte;
+- o acesso aos repositórios deve ser limitado aos membros necessários.
 
----
-
-## Responsabilidade das equipas
-
-Cada equipa é responsável por:
-
-- manter o código da aplicação funcional;
-- garantir que a aplicação pode ser executada em Docker;
-- manter a documentação do próprio projeto;
-- proteger credenciais e dados sensíveis;
-- acompanhar o estado do deploy da sua aplicação;
-- comunicar erros com informação suficiente para diagnóstico.
-
-A plataforma central disponibiliza o mecanismo de deploy, mas não substitui a validação técnica da aplicação.
+A infraestrutura administrativa, os recursos internos do cluster e a base de dados central não são expostos aos utilizadores comuns da plataforma.
 
 ---
 
 ## Suporte
 
-Em caso de problema, deve ser consultada primeiro a documentação e o histórico da execução no GitHub Actions.
+Em caso de problema, deve ser consultado primeiro:
 
-Ao solicitar apoio, indicar:
+1. o guia de deploy;
+2. a execução mais recente em **GitHub Actions**;
+3. o primeiro passo da pipeline que tenha apresentado erro.
+
+Ao solicitar apoio, deve ser indicada informação suficiente para diagnóstico:
 
 - nome do repositório;
 - tecnologia utilizada;
 - descrição do problema;
-- passo em que ocorreu a falha;
-- mensagem de erro relevante.
+- passo da pipeline que falhou;
+- mensagem de erro relevante;
+- indicação sobre utilização de base de dados, migrations ou persistência.
 
-Não devem ser enviados passwords, tokens, chaves privadas ou outros valores sensíveis.
+Nunca devem ser enviados passwords, tokens, chaves privadas ou o conteúdo de secrets.
+
+---
+
+## Origem do projeto
+
+A plataforma foi desenvolvida no âmbito do Trabalho Final de Curso:
+
+**Integração de Aplicações DEISI numa Plataforma Unificada**
+
+Desenvolvido por **Afonso Sá** e **Lucas Martins**, com orientação do **Professor Lúcio Studer Ferreira** e coorientação do **Professor Martim Mourão**.
+
+O projeto teve como objetivo modernizar e normalizar o deploy das aplicações do DEISI através de uma infraestrutura comum, automatizada e documentada.
 
 ---
 
@@ -165,6 +228,6 @@ Não devem ser enviados passwords, tokens, chaves privadas ou outros valores sen
 
 **DEISI — Universidade Lusófona**
 
-Plataforma de deploy de aplicações académicas
+Plataforma unificada para deploy de aplicações académicas
 
 </div>
